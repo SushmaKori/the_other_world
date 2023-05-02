@@ -5,6 +5,7 @@ Technical skills used:
    JavaScript,
    HTML,
    CSS.
+ -->Firebase database is used.
 -->Anyone with an Email and password can participate in the game.
 -->It consists of 8 questions with 3 extra chances.
 -->Game has 2 dead ends and a usual end.
