@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+      <title>signup</title>
+      <style>
+          .login_btn{
+            font-family:"copperplate gothic light";
+            background-color: rgba(252, 251, 251, 0.993);
+            border:none; 
+            border-radius:30px; 
+            padding:12px;
+            padding-left: 50px;
+            padding-right: 50px;
+            margin-left:15%;
+           }
+            .login_btn{
+                border:none; 
+                border-radius:10px; 
+            }
+            .login_btn:hover{
+                background-color:  rgba(138, 189, 138, 0.897);
+                transition: 0.7s;
+            }
+            .login_btn:focus{
+                outline-style:solid;
+                box-shadow: 0 0 0 6px black;
+            }
+            .login_f{
+                margin-left: 30%;
+                margin-right: 40%;
+                margin-bottom: 2%;
+                margin-top: 3%;
+                padding-top: 5%;
+                padding-left:15%;
+                padding-right:30%;
+                padding-bottom: 5%;
+                border-radius: 40px;
+                background-color:rgba(219, 201, 220, 0.445);
+                color: white;
+            }
+            .login_i{
+                font-family:"copperplate gothic light";
+                font-size: 20px;
+            }
+            body{
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                background-image: url("https://i.redd.it/ama5b3i1uqe71.jpg");
+                background-size: 100% 100% ;
+                overflow:hidden;
+                background-repeat: no-repeat;
+            }
+            input[type=text], input[type=password] {
+                margin:2%;
+                padding:10px;
+                border:0;
+                border-radius: 30px;
+                box-shadow:0 0 5px 4px rgba(0,0,0,0.2);
+            }
+            .login_h{
+                margin-left:50px;
+                font-size: 30px;
+                font-family: "copperplate gothic light";
+                color:rgb(13, 10, 3);
+            }
+      </style>
+  </head>
+    <body>
+        <div>
+            <form method="GET" action="signSubmit" class="login_f">
+              <h1 class="login_h">signup</h1>   
+              <h1 class="login_i"> username</h1> 
+              <input type="text" name="user" >
+              <br><br>
+              <h2 class="login_i">email</h2>
+              <input type="text" name="email" required><br><br>
+              <h2 class="login_i">Password </h2><br>
+              <input type="password" name="pass" required><br><br>
+              <input type="submit" value="sign" class="login_btn">
+            </form>
+        </div>
+    </body>
+</html>
