@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<head>
+    <title>Map and Trivia Quiz</title>
+    <!--<script src = "game.ejs"></script>-->
+    <style>
+       body{
+        background-image: url("https://i.ytimg.com/vi/bDOoQ_eE-Ek/maxresdefault.jpg");
+        background-repeat: no-repeat;
+        background-size: 100% 110%;
+        overflow:hidden;
+       }
+      .games_h{
+        padding:20px;
+        font-size: 40px;
+        font-family:"copperplate gothic light";
+        color:rgb(16, 13, 10);
+      }
+      .login_btn{
+        font-family:"copperplate gothic light";
+        background-color: rgba(243, 248, 249, 0.781);
+        border:none; 
+        border-radius:30px; 
+        padding:12px;
+        padding-left: 50px;
+        padding-right: 50px;
+        padding-bottom: 10px;
+        margin-left:35%;
+      }
+      .login_btn{
+        border:none; 
+        border-radius:10px; 
+      }
+      .login_btn:hover{
+        background-color: rgba(138, 189, 138, 0.897);
+        transition: 0.7s;
+      }
+      .login_btn:focus{
+        outline-style:solid;
+        box-shadow: 0 0 0 6px black;
+      }
+      .login_f{
+        font-family:"copperplate gothic light";
+        margin-left: 10%;
+        margin-right: 10%;
+        margin-bottom: 5%;
+        margin-top: 0%;
+        padding-top: 5%;
+        padding-left:5%;
+        padding-right:5%;
+        padding-bottom: 5%;
+        border-radius: 40px;
+        background-color:rgba(228, 177, 101, 0.427);
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <p align = "center" class = "games_h">Quiz</p>
+      <form method="GET" action="thegame" class="login_f">
+        <h2>Rules</h2>
+        <ol>
+          <li>Every question is a clue.</li>
+          <li>Each correctly answered question gets you closer to treasure.&nbsp</li>
+          <li>If you get the answer wrong,OMG!Its a dead end!Don't Worry!We got it covered for you.</li>
+          <li>Three chances are provided on the whole.For every wrong answer one chance is used.</li>
+          <li>On 2 subsequent wrong answers.Game Over!</li>
+          <li>Upon using all the chances,done!Game's Over!</li>
+        </ol>
+        <!--<input type="submit" value="Lets get started" class="login_btn"> -->
+        <button class="login_btn" onclick = "startTimer()">Lets get statred</button>
+    </form>
+    </div>
+  </body> 
+</html>
