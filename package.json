@@ -6,7 +6,7 @@
     "scripts": {
         "start": "node javaScript/index.js",
         "dev": "nodemon javaScript/index.js",
-        "build": "webpack --config index.js"
+        "build": "webpack --config src/index.js"
     },
     "keywords": [],
     "author": "",
