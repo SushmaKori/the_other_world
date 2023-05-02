@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+      <title>login</title>
+        <style>            
+           .login_btn{
+            font-family:"copperplate gothic light";
+            background-color: rgba(252, 251, 251, 0.993);
+            border:none; 
+            border-radius:30px; 
+            padding:12px;
+            padding-left: 50px;
+            padding-right: 50px;
+            margin-left:15%;
+           }
+            .login_btn{
+                border:none; 
+                border-radius:10px; 
+            }
+            .login_btn:hover{
+                background-color: rgba(138, 189, 138, 0.897);
+                transition: 0.7s;
+            }
+            .login_btn:focus{
+                outline-style:solid;
+                box-shadow: 0 0 0 6px black;
+            }
+            .login_f{
+                margin-left: 30%;
+                margin-right: 40%;
+                margin-bottom: 5%;
+                margin-top: 5%;
+                padding-top: 5%;
+                padding-left:15%;
+                padding-right:30%;
+                padding-bottom: 5%;
+                border-radius: 40px;
+                background-color:rgba(175, 221, 222, 0.299);
+                color: white;
+            }
+            .login_i{
+                font-family:"copperplate gothic light";
+                font-size: 20px;
+            }
+            .login_b{
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                background-image: url("https://cdnb.artstation.com/p/assets/images/images/000/287/071/large/10_-%E4%B9%9D%E7%95%8C_%E5%AE%A3%E4%BC%A0--_%E5%A4%A9%E5%A0%91%E5%B1%B1%E8%84%89_ok_.jpg?1415252006");
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+            input[type=text], input[type=password] {
+                margin:2%;
+                padding:10px;
+                border:0;
+                border-radius: 30px;
+                box-shadow:0 0 15px 4px rgba(0,0,0,0.2);
+            }
+            .login_h{
+                margin-left:50px;
+                font-size: 30px;
+                font-family: "copperplate gothic light";
+                color:rgb(13, 10, 3);
+            }
+        </style>
+    </head>
+    <body class="login_b">
+        <form method="GET" action="loginSubmit" class="login_f"> 
+            <h2 class="login_h">Login</h2>
+            <h2 class="login_i">Email</h2>
+            <input type="text" name="email" required><br>
+            <h2 class="login_i">Password </h2>
+            <input type="password" name="pass" required><br><br><br>
+            <input type="submit" value="login" class="login_btn">
+        </form>
+    </body>
+</html>
