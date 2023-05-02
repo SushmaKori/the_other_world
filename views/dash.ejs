@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>student Dashboard</title>
+      <style>
+          /*  import google fonts */
+          @import url("https://cdna.artstation.com/p/assets/images/images/000/185/202/large/il-su-ko-156-5-copy.jpg?1409382544");
+          *{
+            font-family:"copperplate gothic light";
+            margin: 0;
+            padding: 0;
+            border: none;
+            outline: none;
+            text-decoration: none;
+            box-sizing: border-box;
+            /* font-family: "Poppins", sans-serif; */
+          }
+          body{
+            font-family:"copperplate gothic light";
+               /* background-image: url("https://wallpaperaccess.com/full/2309692.jpg"); */
+               background-image: url("https://i.pinimg.com/originals/78/1b/8c/781b8c4c8b2bae2eff597fdda615b5ca.jpg");
+               background-size: 100% 100% ;
+                overflow:hidden;
+                background-repeat: no-repeat;
+                background-size: cover;
+          }
+          .main1{
+            width: 65%;
+            margin-left:10%;
+            margin-top: 5%;
+            border: 2px solid black;
+            border-radius: 8px;
+            color: white;
+            padding-left: 25%;
+            padding-top:5%;
+            padding-bottom:4%;
+            background-color: rgba(186, 235, 235, 0.278);
+          }
+          .main{
+            display: flex;
+            margin-top: 11px;
+          }
+          .n{
+            display: flex;
+            border: 2px solid black;
+            flex-direction: column;
+            
+          }
+          .n label{
+            color: rgb(167, 202, 218);
+            margin: 1rem 3rem;
+            font-size: 22px;
+            padding-bottom: 12%;
+          }
+          .btn{
+            background-color: rgb(150, 203, 202);
+            border-radius: 5px;
+            padding: 20px;
+            margin: 10px;
+            margin-right: 20px;
+            margin-left: 50px;
+          }
+          .btn:hover{
+            background: rgb(111, 231, 145);
+          }
+          .btn:active{
+            background: rgba(33, 207, 132);
+          }
+          .side_bar{            
+            height: 200px;
+          }
+        </style>
+  </head>
+  <body>
+    
+    <h1 align="center" style="color:white">Welcome </h1>
+    <div class="main">
+      <nav style="background: rgba(221, 164, 205, 0.058);">
+        <div class="n">
+          <label align="center" style="color:white" font-family="copperplate gothic light">Menu</label>
+          <div class="side_bar">
+            <form action = "startgame" method = 'GET'>
+              <input type="submit" value="start" class="btn" style="color: white;">
+              </form>
+            <form method="GET" action="login">
+              <input type = "submit" class = "btn" value = "LOGOUT" style="color: white;">
+            </form>
+          </div>
+        </div>
+      </nav>
+      <div class="main1">
+        <div>
+          <h1>Treasure Hunt</h1>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

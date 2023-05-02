@@ -1,0 +1,244 @@
+ <!DOCTYPE html>
+ <head>
+  <style> 
+   
+  body{
+    background-image: url("https://external-preview.redd.it/7JWpmrKN5JpiLmmrk3jOh5s_ScQCU6j1Ff6yDtRnsWE.jpg?width=960&crop=smart&auto=webp&s=c956b5290ba625ed4ef1745b2c5d8a33edb1a008");
+    background-repeat: no-repeat;
+    background-size: 100% 150%;
+    overflow:hidden;
+    font-family:"copperplate gothic light";
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 5%;
+    margin-top: 5%;
+    padding-top: 5%;
+    padding-left:5%;
+    padding-right:5%;
+    padding-bottom: 5%;
+    color: #f5f0f0;
+    font-size: 20px
+  }
+  </style>
+  <script>
+    var question;
+    var cnt=0;
+    var score=0;
+    var chance=0;
+    var flag=false;
+    var ans=0;
+    var fb = true;
+  function getQuestion() {
+    // Fetch a random question from the Open Trivia API
+    fetch("https://opentdb.com/api.php?amount=1&difficulty=easy&type=multiple")
+      .then(response => response.json())
+      .then(data => {
+        // Extract the question, answers, and correct answer from the API response
+        question = {
+          question: data.results[0].question,
+          answers: data.results[0].incorrect_answers.concat(data.results[0].correct_answer),
+          correct_answer: data.results[0].correct_answer
+        };
+        console.log("getQues");
+  
+        // Display the question to the user
+        const questionElement = document.getElementById("question");
+        questionElement.innerHTML = question.question;
+  
+        // Display the possible answers to the user
+        const answersElement = document.getElementById("answers");
+        answersElement.innerHTML = "";
+        question.answers.forEach((answer, index) => {
+          answersElement.innerHTML += `<li><input type="radio" id="answer${index + 1}" name="answer" value="${index + 1}">
+                                        <label for="answer${index + 1}">${answer}</label></li>`;
+        });
+      })
+      .catch(error => console.log(error));
+  }
+
+  function checkAnswer() {
+    // Get the user's answer
+    const selectedAnswer = document.querySelector('input[name="answer"]:checked');
+    console.log(selectedAnswer);
+    if (!selectedAnswer) {
+      alert("Please select an answer.");
+      return;
+    }
+    else{
+      cnt+=1;
+      console.log(cnt);
+    const userAnswer = selectedAnswer.value;
+    // Check if the user's answer is correct
+    if(cnt>=6){
+      console.log("Game Over");
+        alert("Game Over");
+        console.log("Your score is",score);
+        document.getElementById("scores").innerHTML = score;
+        //document.getElementById("next").innerHTML = "<button onclick='score.ejs'>Submit</button>";
+        if(fb){
+         const buttonContainer = document.getElementById("submit-button-container");
+
+        const form = document.createElement("form");
+        form.setAttribute("action", "/result");
+        form.setAttribute("method", "get");
+
+        const input = document.createElement("input");
+        input.setAttribute("type", "number");
+        input.setAttribute("name", "score");
+        input.setAttribute("value", score);
+        
+        const subButton = document.createElement("button");
+        subButton.setAttribute("type", "End");
+        subButton.textContent = "End";
+
+        form.appendChild(input);
+        form.appendChild(subButton);
+        buttonContainer.appendChild(form);
+        }
+        return;
+    }
+    if (userAnswer === String(question.answers.indexOf(question.correct_answer) + 1) && cnt!=9) {
+      score+=1;
+      flag=true;
+      alert("You answered correctly!");
+      if(cnt==6){
+        return;
+      }
+      getQuestion();
+    } 
+    else
+    { 
+      if(cnt<9) {
+      if(!flag && cnt!=1){
+        console.log("Game Over");
+        alert("Game Over");
+        console.log("Your score is",score);
+        document.getElementById("scores").innerHTML = score;
+        //document.getElementById("next").innerHTML = "<button onclick='score.ejs'>Submit</button>";
+        if(fb){
+          fb=false;
+          const buttonContainer = document.getElementById("submit-button-container");
+
+          const form = document.createElement("form");
+          form.setAttribute("action", "/result");
+          form.setAttribute("method", "get");
+
+          const input = document.createElement("input");
+          input.setAttribute("type", "number");
+          input.setAttribute("name", "score");
+          input.setAttribute("value", score);
+          
+          const subButton = document.createElement("button");
+          subButton.setAttribute("type", "End");
+          subButton.textContent = "End";
+
+          form.appendChild(input);
+          form.appendChild(subButton);
+          buttonContainer.appendChild(form);
+
+        }
+
+        return;
+      }
+      flag=false;
+      chance+=1;
+      score-=1;
+      if(chance === 3){
+        console.log("Game Over");
+        alert("Game Over");
+        console.log("Your score is",score);
+        document.getElementById("scores").innerHTML = score;
+        //document.getElementById("next").innerHTML = "<button onclick='score.ejs'>Submit</button>";
+        if(fb){
+          const buttonContainer = document.getElementById("submit-button-container");
+
+          const form = document.createElement("form");
+          form.setAttribute("action", "/result");
+          form.setAttribute("method", "get");
+
+          const input = document.createElement("input");
+          input.setAttribute("type", "number");
+          input.setAttribute("name", "score");
+          input.setAttribute("value", score);
+          
+          const subButton = document.createElement("button");
+          subButton.setAttribute("type", "End");
+          subButton.textContent = "End";
+
+          form.appendChild(input);
+          form.appendChild(subButton);
+          buttonContainer.appendChild(form);
+        }
+        return;
+        //window.location.href = "C:\Users\koris\OneDrive\Documents\elit\views\score.ejs";
+        
+      }
+      else{
+        alert("You answered incorrectly.");
+        getQuestion();
+      }
+    }
+    else{
+      flag=true;
+      console.log("Game Over");
+      alert("Game Over");
+      console.log("Your score is",score);
+      document.getElementById("scores").innerHTML = score;
+        //document.getElementById("next").innerHTML = "<button onclick='score.ejs'>Submit</button>";
+        if(fb){
+          fb=false;
+          const buttonContainer = document.getElementById("submit-button-container");
+
+          const form = document.createElement("form");
+          form.setAttribute("action", "/result");
+          form.setAttribute("method", "get");
+
+          const input = document.createElement("input");
+          input.setAttribute("type", "number");
+          input.setAttribute("name", "score");
+          input.setAttribute("value", score);
+
+          const subButton = document.createElement("button");
+          subButton.setAttribute("type", "End");
+          subButton.textContent = "End";
+
+          form.appendChild(input);
+          form.appendChild(subButton);
+          buttonContainer.appendChild(form);
+      //window.location.href = "C:\Users\koris\OneDrive\Documents\elit\views\score.ejs";
+      /*const ansEle = document.getElementById("next");
+      ansEle.innerHTML = "";
+      ansEle.innerHTML +=`<button onclick="result">Next</button>`;*/
+          return;
+        }
+     }
+    }
+  }
+  }
+  // Attach the getQuestion() function to a button
+  /*const getQuestionButton = document.getElementById("getQuestionButton");
+  getQuestionButton.addEventListener("click", getQuestion);*/
+  
+  // Attach the checkAnswer() function to a button
+  const checkAnswerButton = document.getElementById("checkAnswerButton");
+  checkAnswerButton.addEventListener("click", checkAnswer);
+  
+    /*const scoreText = `You scored ${score} out of 10. The correct answers were: ${correctAnswers.join(", ")}.`;
+    document.getElementById("score").innerHTML = scoreText*/
+  </script>
+</head>
+<body>
+  <script>
+    getQuestion();
+  </script>
+  <p id="question">
+  </p>
+  <p id="answers">
+  </p>
+  <p id="scores"></p>
+    <button onclick="checkAnswer()" id="checkAnswerButton">Submit</button>
+    <div id="next"></div>
+    <div id="submit-button-container"></div>
+</body>
+</html>
+

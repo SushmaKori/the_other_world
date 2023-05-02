@@ -1,0 +1,17 @@
+<html>
+    <body>
+        <% for (var i = 0; i < questions.length; i++) { %>
+            <h3><%= questions[i].question %></h3>
+            <ul>
+              <% for (var j = 0; j< questions[i].options.length; j++) { %>
+                <li>
+                  <label>
+                    <input type="radio" name="answer<%= i %>" value="<%= questions[i].options[j] %>">
+                    <%= questions[i].options[j] %>
+                  </label>
+                </li>
+              <% } %>
+            </ul>
+          <% } %>
+    </body>
+</html>
