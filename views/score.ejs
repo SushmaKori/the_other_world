@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+    body{
+      background-image: url("https://i.pinimg.com/originals/34/96/0f/34960f6fb6069607d6ac2edc084df0ee.jpg");
+      background-size:  cover;
+      background-repeat: no-repeat;
+      overflow:hidden;
+      size: 60px;
+    }
+    .form_group{
+      margin-bottom: 30px;
+      background-color:rgba(192, 233, 230, 0.299);
+      color: white;
+      vertical-align: top;
+    }
+    .form-group form {
+    display: inline-block;
+    margin-right: 10px; /* adds some spacing between forms */
+  }
+  .form-group button {
+    display: inline-block;
+    margin-top: 10px; /* adds some spacing between the form and the button */
+  }
+  .button {
+      background-color: #448da1de;
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 6px 2px;
+      cursor: pointer;
+}
+  </style>
+  <meta charset="UTF-8">
+  <title>Trivia Game</title>
+</head>
+<body align = "center">
+  <h1>Game Over!&nbsp;</h1>
+  <div class="form_group">
+   <form method="GET" action="regame">
+    <button class="button">Exit</button><br>
+   </form>
+  </div>
+  <div class="form_group"></div>
+   <form method="GET" action="startgame">
+    <button class="button">Play Again</button>
+   </form>
+  </div>
+</body>
+</html>
