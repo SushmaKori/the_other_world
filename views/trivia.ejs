@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Trivia Game</title>
+  <script src="/file.js"></script>
+</head>
+<body>
+  <h1>Trivia Game</h1>
+  <form action="/trivia" method="POST">
+    <% for (let i = 0; i < questions.length; i++) { %>
+      <h3><%= questions[i].question %></h3>
+      <% for (let j = 0; j < questions[i].options.length; j++) { %>
+        <label>
+          <input type="radio" name="question-<%= i %>" value="<%= questions[i].options[j] %>">
+          <%= questions[i].options[j] %>
+        </label>
+      <% } %>
+    <% } %>
+    <br>
+    <button type="submit">Submit</button>
+  </form>
+</body>
+</html>
