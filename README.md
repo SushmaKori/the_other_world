@@ -27,3 +27,5 @@ Challenges faced:
  . Using API
  .Setting up score and values according to the logic.
  .Leaderboard
+Link to the video of game:
+     https://youtu.be/TskIYDL_zcc
